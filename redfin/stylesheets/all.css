@@ -1,54 +1,169 @@
-@charset "utf-8";
-
+@charset "UTF-8";
+/* line 3, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
 body {
-  background: #d4d4d4 url("../images/background.png");
+  background-color: #fdfdfd;
   padding: 3rem;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  padding-top: 0; }
 
+/* line 10, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+div {
+  margin: 5rem auto; }
+
+/* line 13, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+#cover {
+  max-height: 80vh;
+  margin: 0 0 1rem; }
+  /* line 15, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  #cover img {
+    width: 100%;
+    max-height: 100%; }
+
+/* line 21, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+h2 {
+  margin-top: 5rem;
+  margin-bottom: 2rem; }
+
+/* line 25, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
 h1 {
-  color: rgba(0, 0, 0, .3);
+  background: #fdfdfd;
+  display: inline-block;
+  width: 100%;
   font-weight: bold;
   font-size: 32px;
   letter-spacing: -1px;
   text-transform: uppercase;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-  padding: 350px 0 10px;
-  margin: 0; }
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  padding: 35px 0 10px;
+  margin: 0;
+  margin-bottom: 1rem; }
 
-.doc {
-  font-size: 14px;
-  margin: 0; }
-  .doc:before,
-  .doc:after {
-    opacity: .2;
-    padding: 6px;
-    font-style: normal;
-    position: relative;
-    content: "•"; }
-  .doc a {
-    color: rgba(0, 0, 0, 0.3); }
-    .doc a:hover {
-      color: #666; }
+/* line 39, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+p.credit {
+  font-size: 1.3em;
+  font-style: italic;
+  padding-bottom: 1rem; }
 
-.welcome {
-  -webkit-animation-name: welcome;
-  -webkit-animation-duration: .9s; }
+/* line 45, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+div.table-holder {
+  margin: 4rem auto; }
 
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-   -webkit-transform: scale(0);
-   opacity: 0;
-  }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
-}
+/* line 49, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+table {
+  width: 100%;
+  max-width: 1000px; }
+  /* line 53, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table thead {
+    background-color: aliceblue; }
+
+/* line 58, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+.sources {
+  padding-top: 3rem;
+  font-style: italic; }
+
+@media screen and (max-width: 480px) {
+  /* line 63, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table,
+  tbody {
+    display: block;
+    width: 100%; }
+
+  /* line 68, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  thead {
+    display: none; }
+
+  /* line 69, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table tr,
+  table th,
+  table td {
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal; }
+
+  /* line 77, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table tr {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 11px;
+    margin-bottom: 11px; }
+
+  /* line 82, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table th[data-title]:before,
+  table td[data-title]:before {
+    content: attr(data-title) ": ";
+    font-weight: bold; }
+
+  /* line 87, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table td {
+    border: none;
+    margin-bottom: 6px;
+    color: #444; }
+
+  /* line 92, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table td:empty {
+    display: none; }
+
+  /* line 93, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table td:first-child {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333; }
+
+  /* line 99, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  table td:first-child:before {
+    content: ''; } }
+/* line 102, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+svg#graphic {
+  margin: auto;
+  width: 100%;
+  margin-top: 4rem; }
+  /* line 107, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  svg#graphic .tick line {
+    visibility: hidden; }
+  /* line 110, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  svg#graphic #bg-rect {
+    fill: #fdfdfd; }
+  /* line 114, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  svg#graphic text {
+    font-size: 0.8em; }
+  /* line 118, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  svg#graphic .cities {
+    isolation: isolate;
+    cursor: pointer; }
+    /* line 122, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+    svg#graphic .cities path {
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-width: 5;
+      opacity: 0.7;
+      mix-blend-mode: multiply; }
+      @media screen and (max-width: 640px) {
+        /* line 122, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+        svg#graphic .cities path {
+          stroke-width: 3; } }
+    /* line 132, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+    svg#graphic .cities .label {
+      visibility: hidden; }
+      /* line 134, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+      svg#graphic .cities .label text {
+        dominant-baseline: hanging;
+        fill: #fdfdfd; }
+    /* line 141, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+    svg#graphic .cities.greyout path {
+      stroke: #ddd;
+      opacity: 0.8;
+      stroke-width: 3; }
+    /* line 149, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+    svg#graphic .cities.active .label {
+      visibility: visible; }
+  /* line 156, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  svg#graphic .marker line {
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+    stroke: black;
+    stroke-dasharray: 4 4; }
+  /* line 162, /Users/kavyasukumar/Projects/redfin-project/source/stylesheets/all.scss */
+  svg#graphic .marker #least-text {
+    text-anchor: end;
+    dominant-baseline: hanging; }

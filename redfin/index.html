@@ -14,22 +14,139 @@
   </head>
 
   <body class="index">
-    <h1>Top 5 least and most affordable large US cities</h1>
-<p>In San Francisco at least half of the homes on the market cost more than 13 times the median income making the tech capital the most unaffordable city in the country. But not all big cities are that unaffordable.</p>
+    <script>
+  var INCOMES = {"2010":{"Los Angeles, CA":49138,"San Diego, CA":62480,"San Francisco, CA":71304,"San Jose, CA":79405,"Miami, FL":29621,"Indianapolis, IN":43088,"Detroit, MI":28357,"Charlotte, NC":52446,"Columbus, OH":43122,"Fort Worth, TX":49530},"2011":{"Los Angeles, CA":50028,"San Diego, CA":63739,"San Francisco, CA":72947,"San Jose, CA":80764,"Miami, FL":30270,"Indianapolis, IN":42704,"Detroit, MI":27862,"Charlotte, NC":53146,"Columbus, OH":43348,"Fort Worth, TX":50456},"2012":{"Los Angeles, CA":49745,"San Diego, CA":63990,"San Francisco, CA":73802,"San Jose, CA":81349,"Miami, FL":29762,"Indianapolis, IN":42144,"Detroit, MI":26955,"Charlotte, NC":52916,"Columbus, OH":43992,"Fort Worth, TX":51105},"2013":{"Los Angeles, CA":49497,"San Diego, CA":64058,"San Francisco, CA":75604,"San Jose, CA":81829,"Miami, FL":30375,"Indianapolis, IN":41962,"Detroit, MI":26325,"Charlotte, NC":52375,"Columbus, OH":44072,"Fort Worth, TX":51315},"2014":{"Los Angeles, CA":49682,"San Diego, CA":65753,"San Francisco, CA":78378,"San Jose, CA":83787,"Miami, FL":30858,"Indianapolis, IN":42076,"Detroit, MI":26095,"Charlotte, NC":53274,"Columbus, OH":44774,"Fort Worth, TX":52492},"2015":{"Los Angeles, CA":50205,"San Diego, CA":66116,"San Francisco, CA":81294,"San Jose, CA":84647,"Miami, FL":31051,"Indianapolis, IN":41987,"Detroit, MI":25764,"Charlotte, NC":53637,"Columbus, OH":45659,"Fort Worth, TX":53214},"2016":{"Los Angeles, CA":51538,"San Diego, CA":68117,"San Francisco, CA":87701,"San Jose, CA":90303,"Miami, FL":31642,"Indianapolis, IN":43101,"Detroit, MI":26249,"Charlotte, NC":55599,"Columbus, OH":47156,"Fort Worth, TX":54876}}
+  var MSP = {"2018":{"1":{"Charlotte, NC":218000,"Columbus, OH":177900,"Detroit, MI":114400,"Fort Worth, TX":215000,"Indianapolis, IN":157000,"Los Angeles, CA":575000,"Miami, FL":284950,"San Diego, CA":535000,"San Francisco, CA":1292500,"San Jose, CA":995000},"2":{"Charlotte, NC":224427.5,"Columbus, OH":180500,"Detroit, MI":115000,"Fort Worth, TX":225000,"Indianapolis, IN":166000,"Los Angeles, CA":592250,"Miami, FL":275000,"San Diego, CA":545000,"San Francisco, CA":1377500,"San Jose, CA":1180000},"3":{"Charlotte, NC":237075,"Columbus, OH":191000,"Detroit, MI":120000,"Fort Worth, TX":229900,"Indianapolis, IN":173000,"Los Angeles, CA":600000,"Miami, FL":300000,"San Diego, CA":558500,"San Francisco, CA":1400000,"San Jose, CA":1263500}},"2017":{"1":{"Charlotte, NC":210000,"Columbus, OH":164000,"Detroit, MI":104450,"Fort Worth, TX":200000,"Indianapolis, IN":139900,"Los Angeles, CA":540000,"Miami, FL":262250,"San Diego, CA":510000,"San Francisco, CA":1050000,"San Jose, CA":820000},"2":{"Charlotte, NC":210000,"Columbus, OH":164800,"Detroit, MI":96000,"Fort Worth, TX":211945,"Indianapolis, IN":150100,"Los Angeles, CA":540000,"Miami, FL":265000,"San Diego, CA":505500,"San Francisco, CA":1235000,"San Jose, CA":880000},"3":{"Charlotte, NC":227000,"Columbus, OH":172700,"Detroit, MI":99500,"Fort Worth, TX":215000,"Indianapolis, IN":155000,"Los Angeles, CA":555000,"Miami, FL":270000,"San Diego, CA":520000,"San Francisco, CA":1200000,"San Jose, CA":955000},"4":{"Charlotte, NC":231000,"Columbus, OH":182500,"Detroit, MI":104000,"Fort Worth, TX":221500,"Indianapolis, IN":160000,"Los Angeles, CA":560000,"Miami, FL":280000,"San Diego, CA":530000,"San Francisco, CA":1269250,"San Jose, CA":960000},"5":{"Charlotte, NC":227255,"Columbus, OH":193000,"Detroit, MI":118000,"Fort Worth, TX":225000,"Indianapolis, IN":168000,"Los Angeles, CA":578000,"Miami, FL":270000,"San Diego, CA":540000,"San Francisco, CA":1300000,"San Jose, CA":980000},"6":{"Charlotte, NC":247000,"Columbus, OH":198000,"Detroit, MI":125000,"Fort Worth, TX":224990,"Indianapolis, IN":172500,"Los Angeles, CA":588000,"Miami, FL":285000,"San Diego, CA":555000,"San Francisco, CA":1280000,"San Jose, CA":1000000},"7":{"Charlotte, NC":240000,"Columbus, OH":198000,"Detroit, MI":125000,"Fort Worth, TX":225000,"Indianapolis, IN":167900,"Los Angeles, CA":590000,"Miami, FL":273750,"San Diego, CA":544000,"San Francisco, CA":1274966.5,"San Jose, CA":976000},"8":{"Charlotte, NC":232000,"Columbus, OH":195000,"Detroit, MI":132000,"Fort Worth, TX":225000,"Indianapolis, IN":162675,"Los Angeles, CA":590000,"Miami, FL":285000,"San Diego, CA":550000,"San Francisco, CA":1230000,"San Jose, CA":975000},"9":{"Charlotte, NC":225000,"Columbus, OH":185500,"Detroit, MI":124250,"Fort Worth, TX":218900,"Indianapolis, IN":162737.5,"Los Angeles, CA":590000,"Miami, FL":282000,"San Diego, CA":547000,"San Francisco, CA":1242849,"San Jose, CA":1000000},"10":{"Charlotte, NC":226000,"Columbus, OH":189900,"Detroit, MI":125000,"Fort Worth, TX":218000,"Indianapolis, IN":160000,"Los Angeles, CA":576500,"Miami, FL":280000,"San Diego, CA":540000,"San Francisco, CA":1285000,"San Jose, CA":1049000},"11":{"Charlotte, NC":226750,"Columbus, OH":185000,"Detroit, MI":120000,"Fort Worth, TX":219900,"Indianapolis, IN":164900,"Los Angeles, CA":589000,"Miami, FL":278000,"San Diego, CA":550000,"San Francisco, CA":1350000,"San Jose, CA":1075000},"12":{"Charlotte, NC":237142,"Columbus, OH":194000,"Detroit, MI":122250,"Fort Worth, TX":226763,"Indianapolis, IN":162500,"Los Angeles, CA":585000,"Miami, FL":275000,"San Diego, CA":545000,"San Francisco, CA":1315000,"San Jose, CA":1100000}},"2016":{"1":{"Charlotte, NC":185000,"Columbus, OH":152000,"Detroit, MI":90000,"Fort Worth, TX":175000,"Indianapolis, IN":134900,"Los Angeles, CA":500000,"Miami, FL":238000,"San Diego, CA":472500,"San Francisco, CA":1050000,"San Jose, CA":770000},"2":{"Charlotte, NC":187500,"Columbus, OH":157000,"Detroit, MI":89900,"Fort Worth, TX":184900,"Indianapolis, IN":135000,"Los Angeles, CA":501000,"Miami, FL":240000,"San Diego, CA":465000,"San Francisco, CA":1115000,"San Jose, CA":821000},"3":{"Charlotte, NC":200598.5,"Columbus, OH":166500,"Detroit, MI":94500,"Fort Worth, TX":186845,"Indianapolis, IN":150000,"Los Angeles, CA":519000,"Miami, FL":238875,"San Diego, CA":485000,"San Francisco, CA":1110000,"San Jose, CA":860000},"4":{"Charlotte, NC":206500,"Columbus, OH":165000,"Detroit, MI":100000,"Fort Worth, TX":189900,"Indianapolis, IN":149950,"Los Angeles, CA":530000,"Miami, FL":250000,"San Diego, CA":496500,"San Francisco, CA":1239000,"San Jose, CA":915000},"5":{"Charlotte, NC":215000,"Columbus, OH":180000,"Detroit, MI":111000,"Fort Worth, TX":199900,"Indianapolis, IN":158900,"Los Angeles, CA":540000,"Miami, FL":250000,"San Diego, CA":500000,"San Francisco, CA":1208500,"San Jose, CA":930000},"6":{"Charlotte, NC":225000,"Columbus, OH":182200,"Detroit, MI":115000,"Fort Worth, TX":199900,"Indianapolis, IN":162500,"Los Angeles, CA":545000,"Miami, FL":260000,"San Diego, CA":499000,"San Francisco, CA":1200000,"San Jose, CA":900000},"7":{"Charlotte, NC":219000,"Columbus, OH":183000,"Detroit, MI":123000,"Fort Worth, TX":200000,"Indianapolis, IN":159900,"Los Angeles, CA":540000,"Miami, FL":263000,"San Diego, CA":500000,"San Francisco, CA":1191000,"San Jose, CA":905000},"8":{"Charlotte, NC":224900,"Columbus, OH":180852.5,"Detroit, MI":123450,"Fort Worth, TX":200000,"Indianapolis, IN":153000,"Los Angeles, CA":545000,"Miami, FL":259000,"San Diego, CA":500000,"San Francisco, CA":1136500,"San Jose, CA":860000},"9":{"Charlotte, NC":210000,"Columbus, OH":177450,"Detroit, MI":115000,"Fort Worth, TX":199000,"Indianapolis, IN":158437.5,"Los Angeles, CA":535000,"Miami, FL":263250,"San Diego, CA":500000,"San Francisco, CA":1125000,"San Jose, CA":860000},"10":{"Charlotte, NC":210000,"Columbus, OH":173000,"Detroit, MI":116500,"Fort Worth, TX":199900,"Indianapolis, IN":151700,"Los Angeles, CA":540000,"Miami, FL":260000,"San Diego, CA":517500,"San Francisco, CA":1222500,"San Jose, CA":880000},"11":{"Charlotte, NC":214497.5,"Columbus, OH":174900,"Detroit, MI":112000,"Fort Worth, TX":199900,"Indianapolis, IN":150000,"Los Angeles, CA":540000,"Miami, FL":260000,"San Diego, CA":498500,"San Francisco, CA":1137500,"San Jose, CA":875000},"12":{"Charlotte, NC":215000,"Columbus, OH":170000,"Detroit, MI":105000,"Fort Worth, TX":209900,"Indianapolis, IN":152000,"Los Angeles, CA":535000,"Miami, FL":255000,"San Diego, CA":505000,"San Francisco, CA":1150000,"San Jose, CA":840000}},"2015":{"1":{"Charlotte, NC":171000,"Columbus, OH":139450,"Detroit, MI":82000,"Fort Worth, TX":165000,"Indianapolis, IN":127000,"Los Angeles, CA":460000,"Miami, FL":215000,"San Diego, CA":445000,"San Francisco, CA":935000,"San Jose, CA":698500},"2":{"Charlotte, NC":183000,"Columbus, OH":145000,"Detroit, MI":75500,"Fort Worth, TX":169995,"Indianapolis, IN":132000,"Los Angeles, CA":470000,"Miami, FL":216000,"San Diego, CA":441250,"San Francisco, CA":1055000,"San Jose, CA":751000},"3":{"Charlotte, NC":197500,"Columbus, OH":156000,"Detroit, MI":83000,"Fort Worth, TX":172500,"Indianapolis, IN":142357.5,"Los Angeles, CA":478000,"Miami, FL":225000,"San Diego, CA":460000,"San Francisco, CA":1100000,"San Jose, CA":810000},"4":{"Charlotte, NC":196247.5,"Columbus, OH":157000,"Detroit, MI":94500,"Fort Worth, TX":175000,"Indianapolis, IN":148000,"Los Angeles, CA":490000,"Miami, FL":230000,"San Diego, CA":460500,"San Francisco, CA":1150000,"San Jose, CA":826000},"5":{"Charlotte, NC":206000,"Columbus, OH":170000,"Detroit, MI":105000,"Fort Worth, TX":183500,"Indianapolis, IN":155000,"Los Angeles, CA":491500,"Miami, FL":245000,"San Diego, CA":468500,"San Francisco, CA":1200000,"San Jose, CA":853000},"6":{"Charlotte, NC":214000,"Columbus, OH":175000,"Detroit, MI":117000,"Fort Worth, TX":189900,"Indianapolis, IN":159900,"Los Angeles, CA":503250,"Miami, FL":245000,"San Diego, CA":483000,"San Francisco, CA":1150000,"San Jose, CA":869500},"7":{"Charlotte, NC":209300,"Columbus, OH":172500,"Detroit, MI":115000,"Fort Worth, TX":186592.5,"Indianapolis, IN":155500,"Los Angeles, CA":505000,"Miami, FL":237000,"San Diego, CA":478900,"San Francisco, CA":1150000,"San Jose, CA":860000},"8":{"Charlotte, NC":204000,"Columbus, OH":169900,"Detroit, MI":112750,"Fort Worth, TX":184900,"Indianapolis, IN":150921,"Los Angeles, CA":510000,"Miami, FL":230000,"San Diego, CA":470000,"San Francisco, CA":1135000,"San Jose, CA":850000},"9":{"Charlotte, NC":194700,"Columbus, OH":173900,"Detroit, MI":110000,"Fort Worth, TX":178500,"Indianapolis, IN":148500,"Los Angeles, CA":499000,"Miami, FL":240000,"San Diego, CA":465000,"San Francisco, CA":1100000,"San Jose, CA":820000},"10":{"Charlotte, NC":192500,"Columbus, OH":158500,"Detroit, MI":106000,"Fort Worth, TX":174900,"Indianapolis, IN":142000,"Los Angeles, CA":495000,"Miami, FL":234550,"San Diego, CA":462000,"San Francisco, CA":1140000,"San Jose, CA":830000},"11":{"Charlotte, NC":201620,"Columbus, OH":159900,"Detroit, MI":100000,"Fort Worth, TX":175000,"Indianapolis, IN":145000,"Los Angeles, CA":500000,"Miami, FL":224900,"San Diego, CA":475000,"San Francisco, CA":1150000,"San Jose, CA":840000},"12":{"Charlotte, NC":194000,"Columbus, OH":158000,"Detroit, MI":92000,"Fort Worth, TX":183000,"Indianapolis, IN":141000,"Los Angeles, CA":507500,"Miami, FL":245000,"San Diego, CA":470000,"San Francisco, CA":1080000,"San Jose, CA":820000}},"2014":{"1":{"Charlotte, NC":169900,"Columbus, OH":131000,"Detroit, MI":66580,"Fort Worth, TX":145000,"Indianapolis, IN":125000,"Los Angeles, CA":424250,"Miami, FL":200000,"San Diego, CA":405000,"San Francisco, CA":880000,"San Jose, CA":650000},"2":{"Charlotte, NC":171000,"Columbus, OH":137600,"Detroit, MI":58000,"Fort Worth, TX":152250,"Indianapolis, IN":124900,"Los Angeles, CA":435000,"Miami, FL":190000,"San Diego, CA":411750,"San Francisco, CA":925500,"San Jose, CA":685000},"3":{"Charlotte, NC":180000,"Columbus, OH":147900,"Detroit, MI":60000,"Fort Worth, TX":158000,"Indianapolis, IN":134500,"Los Angeles, CA":450000,"Miami, FL":215000,"San Diego, CA":430000,"San Francisco, CA":955250,"San Jose, CA":730000},"4":{"Charlotte, NC":182250,"Columbus, OH":152900,"Detroit, MI":69000,"Fort Worth, TX":160429,"Indianapolis, IN":136900,"Los Angeles, CA":455000,"Miami, FL":215000,"San Diego, CA":439000,"San Francisco, CA":934000,"San Jose, CA":751000},"5":{"Charlotte, NC":190050,"Columbus, OH":157500,"Detroit, MI":83500,"Fort Worth, TX":165000,"Indianapolis, IN":143000,"Los Angeles, CA":465000,"Miami, FL":223250,"San Diego, CA":440000,"San Francisco, CA":972000,"San Jose, CA":750000},"6":{"Charlotte, NC":200000,"Columbus, OH":170000,"Detroit, MI":90000,"Fort Worth, TX":169990,"Indianapolis, IN":151402.5,"Los Angeles, CA":465000,"Miami, FL":212000,"San Diego, CA":450000,"San Francisco, CA":995000,"San Jose, CA":770000},"7":{"Charlotte, NC":195000,"Columbus, OH":168000,"Detroit, MI":98000,"Fort Worth, TX":174500,"Indianapolis, IN":146000,"Los Angeles, CA":470500,"Miami, FL":225000,"San Diego, CA":450000,"San Francisco, CA":950000,"San Jose, CA":741500},"8":{"Charlotte, NC":189722.5,"Columbus, OH":166000,"Detroit, MI":102750,"Fort Worth, TX":174900,"Indianapolis, IN":147950,"Los Angeles, CA":475000,"Miami, FL":212000,"San Diego, CA":449000,"San Francisco, CA":925000,"San Jose, CA":750000},"9":{"Charlotte, NC":185000,"Columbus, OH":153450,"Detroit, MI":97000,"Fort Worth, TX":164900,"Indianapolis, IN":142375,"Los Angeles, CA":470000,"Miami, FL":220000,"San Diego, CA":450000,"San Francisco, CA":926666,"San Jose, CA":727060.5},"10":{"Charlotte, NC":180000,"Columbus, OH":156000,"Detroit, MI":93450,"Fort Worth, TX":165000,"Indianapolis, IN":141500,"Los Angeles, CA":472000,"Miami, FL":218000,"San Diego, CA":445000,"San Francisco, CA":975000,"San Jose, CA":750000},"11":{"Charlotte, NC":183000,"Columbus, OH":153500,"Detroit, MI":89825,"Fort Worth, TX":167500,"Indianapolis, IN":139000,"Los Angeles, CA":465000,"Miami, FL":215000,"San Diego, CA":435000,"San Francisco, CA":999500,"San Jose, CA":740000},"12":{"Charlotte, NC":188500,"Columbus, OH":155000,"Detroit, MI":81250,"Fort Worth, TX":171887.5,"Indianapolis, IN":135000,"Los Angeles, CA":465000,"Miami, FL":220000,"San Diego, CA":440000,"San Francisco, CA":940000,"San Jose, CA":722500}},"2013":{"1":{"Charlotte, NC":155000,"Columbus, OH":122000,"Detroit, MI":44900,"Fort Worth, TX":134999,"Indianapolis, IN":117500,"Los Angeles, CA":345000,"Miami, FL":175000,"San Diego, CA":355000,"San Francisco, CA":710000,"San Jose, CA":567500},"2":{"Charlotte, NC":160730,"Columbus, OH":123000,"Detroit, MI":41350,"Fort Worth, TX":145150,"Indianapolis, IN":115000,"Los Angeles, CA":353250,"Miami, FL":172900,"San Diego, CA":357500,"San Francisco, CA":766500,"San Jose, CA":599000},"3":{"Charlotte, NC":170000,"Columbus, OH":137950,"Detroit, MI":48500,"Fort Worth, TX":150000,"Indianapolis, IN":125000,"Los Angeles, CA":388000,"Miami, FL":181500,"San Diego, CA":385000,"San Francisco, CA":840000,"San Jose, CA":630000},"4":{"Charlotte, NC":172000,"Columbus, OH":140000,"Detroit, MI":48624,"Fort Worth, TX":153751,"Indianapolis, IN":128900,"Los Angeles, CA":400000,"Miami, FL":193150,"San Diego, CA":400000,"San Francisco, CA":845000,"San Jose, CA":690000},"5":{"Charlotte, NC":180000,"Columbus, OH":154000,"Detroit, MI":57750,"Fort Worth, TX":158817,"Indianapolis, IN":137000,"Los Angeles, CA":415000,"Miami, FL":195000,"San Diego, CA":415000,"San Francisco, CA":876000,"San Jose, CA":705000},"6":{"Charlotte, NC":189000,"Columbus, OH":165000,"Detroit, MI":63000,"Fort Worth, TX":159900,"Indianapolis, IN":143250,"Los Angeles, CA":434500,"Miami, FL":205000,"San Diego, CA":417000,"San Francisco, CA":850000,"San Jose, CA":700000},"7":{"Charlotte, NC":187531.5,"Columbus, OH":163000,"Detroit, MI":75000,"Fort Worth, TX":164900,"Indianapolis, IN":144900,"Los Angeles, CA":430000,"Miami, FL":200000,"San Diego, CA":425000,"San Francisco, CA":841750,"San Jose, CA":705000},"8":{"Charlotte, NC":186000,"Columbus, OH":159900,"Detroit, MI":80000,"Fort Worth, TX":159900,"Indianapolis, IN":136000,"Los Angeles, CA":440000,"Miami, FL":209500,"San Diego, CA":420000,"San Francisco, CA":850000,"San Jose, CA":680000},"9":{"Charlotte, NC":174000,"Columbus, OH":150500,"Detroit, MI":77000,"Fort Worth, TX":155000,"Indianapolis, IN":135000,"Los Angeles, CA":435000,"Miami, FL":207000,"San Diego, CA":425000,"San Francisco, CA":835000,"San Jose, CA":675000},"10":{"Charlotte, NC":175750,"Columbus, OH":145000,"Detroit, MI":75000,"Fort Worth, TX":154900,"Indianapolis, IN":131324.5,"Los Angeles, CA":434500,"Miami, FL":190000,"San Diego, CA":412500,"San Francisco, CA":869000,"San Jose, CA":670000},"11":{"Charlotte, NC":176000,"Columbus, OH":141500,"Detroit, MI":75000,"Fort Worth, TX":154695,"Indianapolis, IN":130000,"Los Angeles, CA":430000,"Miami, FL":202500,"San Diego, CA":415000,"San Francisco, CA":835000,"San Jose, CA":679000},"12":{"Charlotte, NC":180000,"Columbus, OH":142500,"Detroit, MI":74900,"Fort Worth, TX":159000,"Indianapolis, IN":135000,"Los Angeles, CA":437000,"Miami, FL":200000,"San Diego, CA":416000,"San Francisco, CA":835000,"San Jose, CA":655000}}}
+  var METROS = {"most":["Indianapolis, IN","Columbus, OH","Fort Worth, TX","Charlotte, NC","Detroit, MI"],"least":["San Francisco, CA","San Jose, CA","Los Angeles, CA","Miami, FL","San Diego, CA"]}
+</script>
+<div id="cover"><img src="./images/header.png" alt=""></div>
+<h1>Top 5 least and most affordable big cities</h1>
+<p class='credit'>By Kavya Sukumar</p>
+<p>Big city living often comes with a big price tag. In San Francisco, for instance, at least half of the homes on the market cost more than 16 times the median income making the tech capital the most unaffordable city in the country. But not all big cities are that unaffordable.</p>
 
 <p>We analyzed the latest housing sales data for the top 25 most populated cities in the US to find the most and the least affordable cities.</p>
 
 <h2>Top 5 least affordable large cities</h2>
-<p>San Francisco tops the list of least affordable large  cities with half of the 960 homes sold in March, 2018 fetching over $1.4 million. But even with a median household income 80 percent above the national median, not many can afford to buy a house. More than 76 percent of the houses sold over listing price and it is a trend that looks like it is here to stay.</p>
+<p>San Francisco tops the list of least affordable large  cities with half of the 960 homes sold in March, 2018 fetching over $1.4 million. But even with a median household income one-and-a-half times the national median, not many can afford to buy a house. More than 76 percent of the houses sold above the listing price and it is a trend that looks like it is here to stay.</p>
 
 <p>Three other California cities -- San Jose, Los Angeles and San Diego -- along with Miami make the rest of the list.</p>
 
+<div class="table-holder">
+  <h3>Least affordable cities</h3>
+  <table>
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Median sale price (March, 2018)</th>
+      <th>Median Household income</th>
+      <th>Cost to income ratio</th>
+    </tr>
+  </thead>
+<tbody>
+   <tr>
+     <td data-title="City">San Francisco, CA</td>
+     <td data-title="Median sale price (March, 2018)">$1,400,000</td>
+     <td data-title="Median Household income">$87,701</td>
+     <td data-title="Cost to income ratio">15.96</td>
+   </tr>
+   <tr>
+     <td data-title="City">San Jose, CA</td>
+     <td data-title="Median sale price (March, 2018)">$1,263,500</td>
+     <td data-title="Median Household income">$90,303</td>
+     <td data-title="Cost to income ratio">13.99</td>
+   </tr>
+   <tr>
+     <td data-title="City">Los Angeles, CA</td>
+     <td data-title="Median sale price (March, 2018)">$600,000</td>
+     <td data-title="Median Household income">$51,538</td>
+     <td data-title="Cost to income ratio">11.64</td>
+   </tr>
+   <tr>
+     <td data-title="City">Miami, FL</td>
+     <td data-title="Median sale price (March, 2018)">$300,000</td>
+     <td data-title="Median Household income">$31,642</td>
+     <td data-title="Cost to income ratio">9.48</td>
+   </tr>
+   <tr>
+     <td data-title="City">San Diego, CA</td>
+     <td data-title="Median sale price (March, 2018)">$558,500</td>
+     <td data-title="Median Household income">$68,117</td>
+     <td data-title="Cost to income ratio">8.20</td>
+   </tr>
+ </tbody>
+ </table>
+
+</div>
+
 <h2>Top 5 most affordable large cities</h2>
-<p>On the other end of the spectrum are the more affordable cities where a middle-of-the-line house will likely cost the buyer 3-4 times their income. The most affordable of them is Columbus,OH where over half of the houses sold in March, 2018 sold for more than $191,000.</p>
+<p>On the other end of the spectrum are the more affordable cities where a middle-of-the-line house will likely cost the buyer a more palatable four times their income. The most affordable of them is Indianapolis, IN where over half of the houses sold in March, 2018 sold for more than $173,000. At least 541 houses sold over 20 the asking price.</p>
 
-<p>Other cities in the affordable list are Indianapolis,IN, Charlotte, NC, Fort Worth, TX and Detroit, MI.</p>
+<p>Other cities in the affordable list are Columbus, OH, Charlotte, NC, Fort Worth, TX and Detroit, MI.</p>
+<div class="table-holder">
+  <h3>Most affordable cities</h3>
+  <table>
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Median sale price (March, 2018)</th>
+      <th>Median Household income</th>
+      <th>Cost to income ratio</th>
+    </tr>
+  </thead>
+<tbody>
+   <tr>
+     <td data-title="City">Indianapolis, IN</td>
+     <td data-title="Median sale price (March, 2018)">$173,000</td>
+     <td data-title="Median Household income">$43,101</td>
+     <td data-title="Cost to income ratio">4.01</td>
+   </tr>
+   <tr>
+     <td data-title="City">Columbus, OH</td>
+     <td data-title="Median sale price (March, 2018)">$191,000</td>
+     <td data-title="Median Household income">$47,156</td>
+     <td data-title="Cost to income ratio">4.05</td>
+   </tr>
+   <tr>
+     <td data-title="City">Fort Worth, TX</td>
+     <td data-title="Median sale price (March, 2018)">$229,900</td>
+     <td data-title="Median Household income">$54,876</td>
+     <td data-title="Cost to income ratio">4.19</td>
+   </tr>
+   <tr>
+     <td data-title="City">Charlotte, NC</td>
+     <td data-title="Median sale price (March, 2018)">$237,075</td>
+     <td data-title="Median Household income">$55,599</td>
+     <td data-title="Cost to income ratio">4.26</td>
+   </tr>
+   <tr>
+     <td data-title="City">Detroit, MI</td>
+     <td data-title="Median sale price (March, 2018)">$120,000</td>
+     <td data-title="Median Household income">$26,249</td>
+     <td data-title="Cost to income ratio">4.57</td>
+   </tr>
+ </tbody>
+ </table>
 
-<p class="sources">Data sources: Redfin market data, American Community Survery 2016.</p>
+</div>
+
+<h2>The everchanging list</h2>
+<p>These cities are some of the countries biggest and fastest housing markets. Variations in how they stack up in affordability from one month to the next is to be expected. Here is how they ranked against each other over the last 5 years.</p>
+
+<p>The expensive cities more of less kept their spots in the ranking while the affordable cities switched spots more frequently.</p>
+
+<div>
+  <h3>Affordability variations over time</h3>
+  <svg id='graphic'></svg>
+</div>
+
+<p class="sources">Data sources: Redfin market data, American Community Survey 2010-2016.</p>
+
+<h3>Notes on process.</h3>
+<p>I decided to show only the top 5 in each category because of the conspicuous absence of New York from the data. To validate that the absence does not throw off the calculations, I stubbed in data from census. Though to be totally accurate, I would need to get actual data for New York, New Jersey and a couple other metros that makes the top 25 list of most populated places.</p>
+<p>Improvements I want to make if time: Improve interaction on the dataviz especially for smaller screen. Get data for all 25 cities and show a more detailed affordability ranking caluclated over a three month rolling period perhaps.</p>
+
+<h3>Tech notes</h3>
+<p>The website is baked in using <a href="https://middlemanapp.com/">Middleman</a>. the visualization uses <a href="https://d3js.org/">D3.js</a></p>
 
   </body>
 </html>
