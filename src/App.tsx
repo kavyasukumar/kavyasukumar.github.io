@@ -80,8 +80,7 @@ export default function App() {
 
       {/* --- HERO SECTION --- */}
       <section 
-        className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-20 border-b"
-        style={{ borderColor: colors.border }}
+        className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-20"
       >
         
         <nav className="absolute top-10 right-10 flex items-center gap-6 md:gap-10 z-20 flex-wrap justify-end">
@@ -189,8 +188,8 @@ export default function App() {
       {/* --- CAREER EVOLUTION --- */}
       <section 
         id="pivot" 
-        className="py-24 md:py-48 px-6 md:px-12 border-b relative overflow-hidden transition-colors duration-500"
-        style={{ borderColor: colors.border, backgroundColor: colors.bg }}
+        className="py-16 md:py-24 px-6 md:px-12 relative overflow-hidden transition-colors duration-500"
+        style={{ backgroundColor: colors.bg }}
       >
         <div className="max-w-[1440px] mx-auto">
           <SectionTitle isDark={isDark} outline="CAREER" solid="EVOLUTION" />
@@ -252,8 +251,8 @@ export default function App() {
        {/* --- MEDIA CLIPS SECTION --- */}
       <section 
         id="clips" 
-        className="py-24 md:py-48 px-6 md:px-12 border-b transition-colors duration-500"
-        style={{ borderColor: colors.border, backgroundColor: colors.bg }}
+        className="py-16 md:py-24 px-6 md:px-12 transition-colors duration-500"
+        style={{ backgroundColor: colors.bg }}
       >
         <div className="max-w-[1440px] mx-auto">
           <SectionTitle isDark={isDark} outline="MEDIA" solid="CLIPS" />
