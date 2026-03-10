@@ -72,7 +72,10 @@ export default function App() {
         .font-body { font-family: var(--font-body); }
         .font-mono { font-family: var(--font-mono); }
 
-        html { scroll-behavior: smooth; }
+        html { 
+          scroll-behavior: smooth; 
+          font-size: 18px; /* Base rem scaling increased to 18px */
+        }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: ${colors.bg}; }
         ::-webkit-scrollbar-thumb { background: ${isDark ? '#deff00' : '#0000ff'}; }
@@ -307,7 +310,7 @@ export default function App() {
       <section id="contact" className="py-32 md:py-64 px-6 md:px-12 relative overflow-hidden transition-colors duration-500" style={{ backgroundColor: colors.bg }}>
         
         <div className="max-w-[1440px] mx-auto relative z-10 text-center">
-          <h2 className="text-[15vw] md:text-[14rem] leading-[0.7] tracking-tighter mb-16 font-display uppercase">
+          <h2 className="text-[15vw] lg:text-[12rem] leading-[0.85] tracking-tighter mb-16 font-display uppercase">
             <span className="block" style={{ color: colors.text }}>GET IN</span>
             <span 
               className="block text-transparent" 
@@ -318,7 +321,7 @@ export default function App() {
           </h2>
           <a 
             href={`mailto:${SITE_DATA.profile.email}`} 
-            className="text-2xl md:text-5xl font-extralight tracking-tighter underline underline-offset-[16px] md:underline-offset-[24px] decoration-4 transition-all font-display break-all"
+            className="text-[5.5vw] sm:text-4xl md:text-5xl font-extralight tracking-tighter underline underline-offset-[8px] md:underline-offset-[24px] decoration-4 transition-all font-display whitespace-nowrap"
             style={{ 
               color: colors.text,
               textDecorationColor: colors.accent
