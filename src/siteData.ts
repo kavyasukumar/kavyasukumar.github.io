@@ -18,8 +18,7 @@ const SITE_DATA = {
       linkedin: "https://www.linkedin.com/in/kavya-sukumar/",
       github: "https://github.com/kavyasukumar",
       bluesky: "https://bsky.app/profile/thecaveat.bsky.social",
-      instagram: "https://www.instagram.com/thecaveat/",
-      twitter: "https://twitter.com/kavyasukumar"
+      instagram: "https://www.instagram.com/thecaveat/"
     }
   },
   navigation: [
@@ -38,14 +37,14 @@ const SITE_DATA = {
       phase: "01",
       title: "ENGINEERING",
       subtitle: "Systems & Scalability",
-      description: "Career foundation established at Microsoft, developing core features for global platforms including Xbox, MSN Games and Bing.",
+      description: "Career foundation established at Microsoft, developing core features for global platforms including Xbox platform, MSN Games and Bing Videos.",
       icon: Cpu
     },
     {
       phase: "02",
       title: "JOURNALISM",
-      subtitle: "Editorial Technologist",
-      description: "Held multiple roles across the content publishing space including investigative journalist, data editor, editorial engineer at The Washington Post, Vox Media and The Palm Beach Post.",
+      subtitle: "Editorial Technology",
+      description: "Held multiple roles across the content publishing space including investigative journalist, data editor, and editorial engineer at The Washington Post, Vox Media and The Palm Beach Post.",
       icon: Newspaper
     },
     {
@@ -59,18 +58,11 @@ const SITE_DATA = {
       phase: "04",
       title: "VENTURE CAPITAL",
       subtitle: "Strategic Leadership",
-      description: "Driving strategic growth and investment. Providing executive product leadership and advisory services to high-growth startups in the media-tech ecosystem.",
+      description: "Building technology for critical decision-making in investment. Providing executive product leadership and advisory services to high-growth startups.",
       icon: BadgeDollarSign
     },
   ],
   clips: [
-    {
-      source: "Vox.com",
-      title: "How climate change will transform your city’s forecast",
-      snippet: "A massive data journalism project visualizing the long-term impact of global warming on the daily weather of every major US city.",
-      url: "https://www.vox.com/a/weather-climate-change-us-cities-global-warming",
-      tags: ["data", "infographic", "engineering"]
-    },
     {
       source: "Nieman Lab",
       title: "Journalism’s identity crisis intensifies and decentralization ensues",
@@ -83,7 +75,14 @@ const SITE_DATA = {
       title: "Belling the cat: The rise of independent fact-checking at scale",
       snippet: "Predictions on the future of accountability and the tools required to sustain independent verification.",
       url: "https://www.niemanlab.org/2022/12/belling-the-cat-the-rise-of-independent-fact-checking-at-scale/",
-      tags: ["writing", "tech"]
+      tags: ["writing", "media"]
+    },
+    {
+      source: "Vox.com",
+      title: "How climate change will transform your city’s forecast",
+      snippet: "A massive data journalism project visualizing the long-term impact of global warming on the daily weather of every major US city.",
+      url: "https://www.vox.com/a/weather-climate-change-us-cities-global-warming",
+      tags: ["data", "infographic", "engineering"]
     },
     {
       source: "Vox.com",
@@ -97,21 +96,21 @@ const SITE_DATA = {
       title: "The bride, the groom, and the dowry dilemma",
       snippet: "A first-person exploration of cultural traditions and the modern dilemmas facing Indian marriages.",
       url: "https://www.vox.com/first-person/2017/2/6/14403490/dowry-india-bride-groom-dilemma",
-      tags: ["writing"]
+      tags: ["writing", "infographic"]
     },
     {
       source: "OpenNews Source",
       title: "Introducing Autotune",
       snippet: "How Vox Media built a centralized system for making and managing newsroom graphics.",
       url: "https://source.opennews.org/articles/introducing-autotune/",
-      tags: ["engineering", "professional mention"]
+      tags: ["engineering", "media", "writing"]
     },
     {
       source: "OpenNews Source",
       title: "Building an Annotation Tool on a Dime",
-      snippet: "Technical strategies for creating Dime, an open-source tool for marking up storytelling elements.",
+      snippet: "Technical strategies for creating an open-source tool for newsroom to collaborate on annotating stories in near real-time.",
       url: "https://source.opennews.org/articles/building-annotation-tool-dime/",
-      tags: ["engineering"]
+      tags: ["engineering", "media", "writing"]
     }
   ]
 };
