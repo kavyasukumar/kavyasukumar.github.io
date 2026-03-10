@@ -98,17 +98,26 @@ export default function App() {
               ))}
             </div>
             
-            {/* Theme Switcher Button */}
+            {/* Theme Switcher Slide Toggle */}
             <button 
               onClick={toggleTheme}
-              className="p-2 border-2 border-current rounded-full hover:bg-current hover:text-white transition-all flex items-center justify-center"
+              className="relative w-16 h-8 rounded-full border-2 transition-all duration-300 flex items-center px-1"
               title="Toggle Theme"
               style={{ 
-                color: colors.text,
+                borderColor: colors.text,
                 backgroundColor: isDark ? 'rgba(255,255,255,0.1)' : 'transparent'
               }}
             >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+              <div 
+                className="w-5 h-5 rounded-full flex items-center justify-center transition-transform duration-300"
+                style={{
+                  backgroundColor: colors.text,
+                  color: colors.bg,
+                  transform: isDark ? 'translateX(32px)' : 'translateX(0)'
+                }}
+              >
+                {isDark ? <Sun size={12} /> : <Moon size={12} />}
+              </div>
             </button>
         </nav>
 
@@ -120,19 +129,32 @@ export default function App() {
             >
               <Zap size={12} fill={colors.text} /> {SITE_DATA.profile.title}
             </span>
-            <h1 className="text-[14vw] lg:text-[13rem] leading-[0.75] tracking-tighter font-display uppercase">
+            <h1 className="text-[16vw] sm:text-[14vw] lg:text-[13rem] leading-[0.75] tracking-tighter font-display uppercase flex flex-col items-start">
               {/* First Name solid, Last Name outlined */}
               <span 
-                className="block hover:text-[#deff00] transition-colors duration-500"
+                className="block transition-all duration-300 cursor-default"
                 style={{ color: colors.text }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = colors.accent;
+                  (e.currentTarget.style as any).webkitTextStroke = `3px ${isDark? colors.accent: colors.text}`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = colors.text;
+                  (e.currentTarget.style as any).webkitTextStroke = `1px ${colors.text}`;
+                }}
               >
                 {SITE_DATA.profile.firstName}
               </span>
               <span 
-                className="block text-transparent" 
+                className="block text-transparent transition-all duration-300 cursor-default" 
                 style={{ 
-                  WebkitTextStroke: `1px ${colors.text}`,
-                  transition: 'all 0.5s ease'
+                  WebkitTextStroke: `1px ${colors.text}`
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget.style as any).webkitTextStroke = `3px ${isDark? colors.accent: colors.text}`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget.style as any).webkitTextStroke = `1px ${colors.text}`;
                 }}
               >
                 {SITE_DATA.profile.lastName}
@@ -290,7 +312,7 @@ export default function App() {
             <span className="block" style={{ color: colors.text }}>GET IN</span>
             <span 
               className="block text-transparent" 
-              style={{ WebkitTextStroke: `1.2px ${colors.text}` }}
+              style={{ WebkitTextStroke: `1.2px ${colors.text}` } as any}
             >
               TOUCH
             </span>
