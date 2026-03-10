@@ -266,23 +266,23 @@ export default function App() {
                 href={clip.url} 
                 target="_blank" 
                 rel="noreferrer"
-                className="group flex flex-col p-8 border-2 transition-all duration-500 shadow-sm hover:shadow-2xl relative"
+                className="group flex flex-col p-8 border-2 transition-all duration-300 shadow-sm hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#deff00] hover:!border-[#deff00] relative"
                 style={{ 
                   backgroundColor: colors.bg,
                   borderColor: isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,255,0.1)'
                 }}
               >
                 <div className="flex justify-between items-start mb-6">
-                  <div className="p-2" style={{ backgroundColor: colors.accent }}>
+                  <div className="p-2 transition-transform duration-300 group-hover:-rotate-12" style={{ backgroundColor: colors.accent }}>
                     <Quote size={16} fill="black" stroke="black" />
                   </div>
-                  <ExternalLink size={18} className="transition-all hover:scale-110" style={{ color: colors.text }} />
+                  <ExternalLink size={18} className={`transition-all duration-300 group-hover:scale-125 ${isDark ? 'group-hover:!text-[#deff00]' : ''}`} style={{ color: colors.text }} />
                 </div>
                 <span className="font-mono text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block" style={{ color: colors.text }}>
                   {clip.source}
                 </span>
                 <h3 
-                  className="text-xl font-black font-display uppercase leading-tight mb-6 transition-colors group-hover:text-[#deff00]"
+                  className={`text-xl font-black font-display uppercase leading-tight mb-6 transition-colors ${isDark ? 'group-hover:!text-[#deff00]' : ''}`}
                   style={{ color: colors.text }}
                 >
                   {clip.title}
@@ -319,7 +319,7 @@ export default function App() {
               TOUCH
             </span>
           </h2>
-          <a 
+         <a 
             href={`mailto:${SITE_DATA.profile.email}`} 
             className="text-[5.5vw] sm:text-4xl md:text-5xl font-extralight tracking-tighter underline underline-offset-[8px] md:underline-offset-[24px] decoration-4 transition-all font-display whitespace-nowrap"
             style={{ 
