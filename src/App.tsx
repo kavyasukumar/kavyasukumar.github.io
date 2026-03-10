@@ -24,7 +24,7 @@ export default function App() {
   // Listen for system theme changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => setIsDark(e.matches);
+    const handleChange = (e: MediaQueryListEvent) => setIsDark(e.matches);
     
     // Modern browsers
     mediaQuery.addEventListener('change', handleChange);
@@ -33,9 +33,9 @@ export default function App() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const toggleTheme = () => setIsDark(!isDark);
+  const toggleTheme = (): void => setIsDark(!isDark);
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string): void => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
